@@ -46,7 +46,7 @@ MonoBehaviour:
   mixerGroup: {fileID: 0}
   sounds:
   - name: PrsimRotate
-    clip: {fileID: 8300000, guid: 362b409000ca62c499b3bf0ba8886720, type: 3}
+    clip: {fileID: 8300000, guid: b1e6a521a812f334ab9f4ee3483e8ec3, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
