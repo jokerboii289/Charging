@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LinerendererTracer : MonoBehaviour
+public class LinerendererTracer : MonoBehaviour   // attached to linetracer (empty gameObject which is set to the linerendere last position for line rendere animation)
 {
     [SerializeField] GameObject phoneChargingScreen;
     [SerializeField] Image chargePercentage;
     float startAmount ;
     bool start;
     bool stop;
-    GameObject hit;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +32,7 @@ public class LinerendererTracer : MonoBehaviour
             }
             if(startAmount>=1 && !stop)
             {
-                hit.GetComponent<Phone>().charged = true;
-                InitiateWin();
+                Stoper();
             }
         }
         else if(!start && startAmount>0)
@@ -52,9 +51,11 @@ public class LinerendererTracer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Phone"))
         {
-            //Vibration.Vibrate(30);
+            PauseMenu.instance.UpdateNoOfChargedPhones();
+            other.GetComponent<Phone>().charged = true;
+            Vibration.Vibrate(30);         //for vibration
+
             AudioManager.instance.Play("PhoneCharge");
-            hit = other.gameObject;
             phoneChargingScreen.SetActive(true);
             start = true;
         }
@@ -67,16 +68,16 @@ public class LinerendererTracer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Phone"))
         {
+            PauseMenu.instance.NegateCharges();
+            other.GetComponent<Phone>().charged = false;
             AudioManager.instance.Play("PhoneDischarge");
-          
+            
         }
     }
 
 
-    void InitiateWin()
+    void Stoper() //stop percentage wheel
     {
-        //function to call win
-        PauseMenu.instance.Win();
         stop = true;
     }
 

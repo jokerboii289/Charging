@@ -55,7 +55,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: PhoneCharge
-    clip: {fileID: 8300000, guid: 3b06a5808dff5a04aa206b2339dcfaeb, type: 3}
+    clip: {fileID: 8300000, guid: 251b1fda5d9e7484497bd30a47d911a2, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
@@ -64,7 +64,7 @@ MonoBehaviour:
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: PhoneDischarge
-    clip: {fileID: 8300000, guid: b431227e5d7948543a649eca128372e7, type: 3}
+    clip: {fileID: 8300000, guid: 32283ce1f783ae94e945591f6981642f, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1

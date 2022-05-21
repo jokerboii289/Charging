@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootRay : MonoBehaviour
+public class ShootRay : MonoBehaviour //attached to charger ->shootpoint(childobject of charger)
 {
     public static ShootRay instance;
     [SerializeField]LayerMask ignoreLayer;

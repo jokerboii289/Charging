@@ -2,34 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateObjects : MonoBehaviour
+public class RotateObjects : MonoBehaviour //rotate attached to the prism
 {
     GameObject charger;
     float rotationAngle;
-    [SerializeField] bool player;
+
     // Start is called before the first frame update
     void Start()
     {
-        rotationAngle = 0;
+        rotationAngle = transform.eulerAngles.y;
     }
  
     private void OnMouseDown()
     {
-
-        AudioManager.instance.Play("PrsimRotate");
-        //if (player)
-        //{           
-        //    //ShootRay.instance.ResetLineRendere();
-
-        //    //rotationAngle += 90;
-
-        //    //transform.eulerAngles = new Vector3(0, rotationAngle, 0);
-        //}
         if(!PauseMenu.stop)
         {
             rotationAngle += 90;
 
             transform.eulerAngles = new Vector3(0, rotationAngle, 0);
+
+            AudioManager.instance.Play("PrsimRotate");  //Tap sound 
             ////modified
             //transform.root.eulerAngles = new Vector3(0, rotationAngle, 0);
 

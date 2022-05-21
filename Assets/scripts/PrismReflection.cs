@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrismReflection : MonoBehaviour
+public class PrismReflection : MonoBehaviour //attached to every prism->point(childobject of prism)
 {
     GameObject temp;
     [SerializeField]LayerMask ignoreLayer;

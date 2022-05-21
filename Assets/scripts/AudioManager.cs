@@ -2,9 +2,8 @@ using UnityEngine.Audio;
 using System;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : MonoBehaviour //attached to sound manager prefab
 {
-
 	public static AudioManager instance;
 
 	public AudioMixerGroup mixerGroup;
