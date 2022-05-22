@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour  //this script is attached to gameManager
 {
-    [SerializeField] GameObject winPanel;
-    public static bool stop;
     public static PauseMenu instance;
+
+    [SerializeField] GameObject winPanel;
+    public static bool stop;   
     [SerializeField]int countNoOfPhones;
     // Start is called before the first frame update
     void Start()
@@ -57,7 +58,7 @@ public class PauseMenu : MonoBehaviour  //this script is attached to gameManager
 
     public void NextLvl() //for next level 
     {
-       // print("welcom");
+        //print("welcom");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

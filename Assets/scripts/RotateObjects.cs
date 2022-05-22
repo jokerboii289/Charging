@@ -25,7 +25,6 @@ public class RotateObjects : MonoBehaviour //rotate attached to the prism
             ////modified
             //transform.root.eulerAngles = new Vector3(0, rotationAngle, 0);
 
-
             if (charger != null)
             {
                 charger.GetComponent<ShootRay>().TrimPointsIndex(transform.position);

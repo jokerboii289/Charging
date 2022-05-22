@@ -742,6 +742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38485bc1fe8b8254ebd706b545966eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winPanel: {fileID: 0}
   countNoOfPhones: 3
 --- !u!4 &572648787
 Transform:
@@ -1213,7 +1214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975157362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.164, z: 0}
   m_LocalScale: {x: 2.074, y: 2.074, z: 2.074}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1897,7 +1898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8964a85cd61d3444b8a2ab3ad45a18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 0
 --- !u!1 &1945474532
 GameObject:
   m_ObjectHideFlags: 0
