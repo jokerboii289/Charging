@@ -24930,7 +24930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 64
   speed: 0
   EmptyObject: {fileID: 0}
   duration: 0

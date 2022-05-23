@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class LinerendererTracer : MonoBehaviour   // attached to linetracer (empty gameObject which is set to the linerendere last position for line rendere animation)
 {
-    [SerializeField] GameObject phoneChargingScreen;
-    [SerializeField] Image chargePercentage;
+    [SerializeField] GameObject phoneChargingScreen;  //charging screen of the phone(sub gameobject of mobile
+    [SerializeField] Image chargePercentage; //percentage wheel of the phone(sub gameobject of mobile
     float startAmount ;
     bool start;
     bool stop;
@@ -17,7 +17,7 @@ public class LinerendererTracer : MonoBehaviour   // attached to linetracer (emp
         phoneChargingScreen.SetActive(false);
         startAmount = 0;
         start = false;
-        stop = false;
+        stop = false;   // this bool mainly resposible for  stoping further tapping of screen when game is finished
     }
 
     // Update is called once per frame

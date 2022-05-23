@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prism 1 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6194237019550722928, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 511c073003c6ab045952cb882f7e5781, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
 --- !u!1 &307066750
@@ -364,6 +368,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7669826509683670712, guid: e84891f085e00274a83fe84959f8332a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669826509683670712, guid: e84891f085e00274a83fe84959f8332a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669826509683670712, guid: e84891f085e00274a83fe84959f8332a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 572648786}
+    - target: {fileID: 7669826509683670712, guid: e84891f085e00274a83fe84959f8332a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669826509683670712, guid: e84891f085e00274a83fe84959f8332a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669826509683670712, guid: e84891f085e00274a83fe84959f8332a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669826509683670712, guid: e84891f085e00274a83fe84959f8332a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8712545080651603141, guid: e84891f085e00274a83fe84959f8332a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -514,6 +546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prism 1 (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 6194237019550722928, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 511c073003c6ab045952cb882f7e5781, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
 --- !u!1 &572648785
@@ -907,6 +943,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prism 1 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 6194237019550722928, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 511c073003c6ab045952cb882f7e5781, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
 --- !u!1001 &1008230265
@@ -964,6 +1004,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prism 1 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6194237019550722928, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 511c073003c6ab045952cb882f7e5781, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
 --- !u!1 &1049171541 stripped
@@ -1177,6 +1221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prism 1 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 6194237019550722928, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 511c073003c6ab045952cb882f7e5781, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
 --- !u!1 &1433725578 stripped
@@ -1366,6 +1414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prism 1 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 6194237019550722928, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 511c073003c6ab045952cb882f7e5781, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
 --- !u!1001 &1929358153
@@ -1423,6 +1475,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prism 1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6194237019550722928, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 511c073003c6ab045952cb882f7e5781, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
 --- !u!1001 &1957066247
@@ -1553,6 +1609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prism 1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6194237019550722928, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 511c073003c6ab045952cb882f7e5781, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e5d384b0c7ab7418ed342864259064, type: 3}
 --- !u!1001 &4883162296551443035

@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078555794936138616}
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: -0.00178, y: -0.00234, z: 0.00178}
-  m_LocalScale: {x: 0.0054937564, y: 0.0058756843, z: 0.0042132554}
+  m_LocalPosition: {x: -0.00165, y: -0.00234, z: 0.000954}
+  m_LocalScale: {x: 0.0049333037, y: 0.005111437, z: 0.0042132554}
   m_Children: []
   m_Father: {fileID: 2662822061968033585}
   m_RootOrder: 1
@@ -364,12 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1797a57b6849cde42bcdb32b5b9b53b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreLayer:
-    serializedVersion: 2
-    m_Bits: 0
   castRay: 0
-  threeWay: {fileID: 0}
-  tempChargerHolder: {fileID: 0}
   rayShootPoint: {fileID: 2662822062412965682}
   reflect: 0
 --- !u!1 &2662822062915438739

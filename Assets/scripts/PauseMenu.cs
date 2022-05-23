@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour  //this script is attached to gameManager
 {
@@ -13,12 +14,12 @@ public class PauseMenu : MonoBehaviour  //this script is attached to gameManager
     // Start is called before the first frame update
     void Start()
     {
-        stop = false;
         instance = this;
+
+        stop = false;
         Vibration.Init();
         Application.targetFrameRate = 120;
         QualitySettings.vSyncCount = 0;
-
         winPanel.SetActive(false);
     }
 
@@ -43,22 +44,21 @@ public class PauseMenu : MonoBehaviour  //this script is attached to gameManager
 
     IEnumerator DelayWinPanel()
     {
-        print(SceneManager.GetActiveScene().buildIndex);
         yield return new WaitForSeconds(2f);
-        //function For sound win sound
+
+        // write function For win sound
+
         winPanel.SetActive(true); //winpanel
-        StartCoroutine(Delay());
     }
 
-    IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(1f);
-        NextLvl();
-    }
 
-    public void NextLvl() //for next level 
+    public void NextLvl() //for next level  assign to next button
     {
-        //print("welcom");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+    
+    public void ReloadScene()// assign to reload button
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

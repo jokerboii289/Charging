@@ -5,14 +5,13 @@ using UnityEngine;
 public class ShootRay : MonoBehaviour //attached to charger ->shootpoint(childobject of charger)
 {
     public static ShootRay instance;
-    [SerializeField]LayerMask ignoreLayer;
+    //[SerializeField]LayerMask ignoreLayer;
     int start;
     int countIndex;
-    [SerializeField] float speed;
+   
     [SerializeField] GameObject EmptyObject;
-    
 
-    [SerializeField] float duration;//linerender speed;
+   // [SerializeField] float duration;//linerender speed;
     
     bool castRay;  // to dealay
     LineRenderer lineRenderer;
@@ -31,7 +30,7 @@ public class ShootRay : MonoBehaviour //attached to charger ->shootpoint(childob
         lineRenderer = GetComponent<LineRenderer>();
         points.Add(transform.position);
         lineRenderer.positionCount = 1;
-        lineRenderer.SetPosition(0, points[0]);
+        lineRenderer.SetPosition(0, points[0]);  //set the line render first index pos as charger pos
     }
 
     // Update is called once per frame
@@ -54,9 +53,9 @@ public class ShootRay : MonoBehaviour //attached to charger ->shootpoint(childob
 
     IEnumerator LineRenderAnimator() // animate line
     {
-        if(lineRenderer.positionCount < points.Count)//countIndex<points.Count
+        if(lineRenderer.positionCount < points.Count)//if line renderer position count > list of points stored by raycast
             lineRenderer.positionCount = countIndex+1;
-        else if(lineRenderer.positionCount > points.Count)//countIndex > points.Count
+        else if(lineRenderer.positionCount > points.Count)//if line renderer position count < list of points stored by raycast on points(list)
         {
             countIndex = points.Count -1;
             start = countIndex - 1;
@@ -78,17 +77,17 @@ public class ShootRay : MonoBehaviour //attached to charger ->shootpoint(childob
                 var direction = (endPos - startPos);
                 if (direction.magnitude > .01)
                 {
-                    EmptyObject.transform.position = Vector3.Lerp(EmptyObject.transform.position, endPos, 5f * Time.deltaTime);
+                    EmptyObject.transform.position = Vector3.Lerp(EmptyObject.transform.position, endPos, 5f * Time.deltaTime);  //movement of the lineRender smoothly
                     lineRenderer.SetPosition(end, EmptyObject.transform.position);
                     yield return null;
                 }
             }
         }
         
-        if (start < points.Count - 1 && (EmptyObject.transform.position - points[start+1]).magnitude < .09f)
+        if (start < points.Count - 1 && (EmptyObject.transform.position - points[start+1]).magnitude < .09f)  
         {
-            lineRenderer.SetPosition(start+1, points[start+1]);
-            EmptyObject.transform.position = points[start+1];
+            lineRenderer.SetPosition(start+1, points[start+1]); //set the line render end position to the most recent list of position stored via raycast;
+            EmptyObject.transform.position = points[start+1];  //setting position of the emptyObject(line rendere tracer)  
             start += 1;
 
             if(countIndex<points.Count)
@@ -99,7 +98,7 @@ public class ShootRay : MonoBehaviour //attached to charger ->shootpoint(childob
 
     public void PointOnWallFirst()  // point on wall
     {
-        if (Physics.Raycast(transform.position, transform.forward,out RaycastHit hit, 1000/*, ~ignoreLayer*/) && castRay)
+        if (Physics.Raycast(transform.position, transform.forward,out RaycastHit hit, 1000/*, ignoreLayer*/) && castRay)
         {
             if (hit.collider.CompareTag("reflect"))
             {
@@ -117,7 +116,7 @@ public class ShootRay : MonoBehaviour //attached to charger ->shootpoint(childob
                 ////modified
                 //hit.transform.root.GetChild(3).gameObject.GetComponent<RotateObjects>().Charger(gameObject);
 
-                temp.ReflectRay(reflectRay,gameObject);           
+                temp.ReflectRay(reflectRay,gameObject);     //passing refference of charger to prism which being is hit  
             }
             
             else if (hit.collider.CompareTag("prismbody"))
@@ -150,7 +149,7 @@ public class ShootRay : MonoBehaviour //attached to charger ->shootpoint(childob
         }
     }
 
-    public void ResetLineRendere()  //when charger rotates
+    public void ResetLineRendere()  // Extra ignore this func
     {
         castRay = false;
         for(int i=0;i<points.Count;i++)
@@ -164,23 +163,23 @@ public class ShootRay : MonoBehaviour //attached to charger ->shootpoint(childob
     {      
         yield return new WaitForSeconds(0.01f);
         castRay = true;
-        points.Add(transform.position);//first index is shoot position
+        points.Add(transform.position);//first index is the shooting pos of charger
     }
 
-    public void UpdateListOfpoints(Vector3 pos)//line renderer;
+    public void UpdateListOfpoints(Vector3 pos)//update points list 
     {
         if (!points.Contains(pos))
             points.Add(pos);
     }
 
-    public void TrimPointsIndex(Vector3 pos)
+    public void TrimPointsIndex(Vector3 pos)  //trimmin the the points of the prisms which come After the prism which is rotated
     {
         int index=0;
         int temp;
         if (points.Contains(pos) && pos != points[points.Count - 1])
         {
             castRay = false;
-            for (int i = 0; i < points.Count; i++)
+            for (int i = 0; i < points.Count; i++)  
             {
                 if (points[i] == pos)
                 {
@@ -194,21 +193,10 @@ public class ShootRay : MonoBehaviour //attached to charger ->shootpoint(childob
         }
     }
 
-    IEnumerator DelayUpdate()
+    IEnumerator DelayUpdate() //this delay is done for the raycast to not to be instantenous while the prism is being rotated
     {
         yield return new WaitForSeconds(.05f);
         castRay = true;
     }   
-
-    public void CheckPoints(Transform pos)
-    {
-        if(points.Contains(pos.position))
-        {
-            pos.GetChild(2).gameObject.GetComponent<MeshRenderer>().material.SetFloat("_emmision", 40);
-        }
-        else
-        {
-            pos.GetChild(2).gameObject.GetComponent<MeshRenderer>().material.SetFloat("_emmision", 40);
-        }
-    }
+    
 }

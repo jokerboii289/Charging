@@ -5,10 +5,9 @@ using UnityEngine;
 public class PrismReflection : MonoBehaviour //attached to every prism->point(childobject of prism)
 {
     GameObject temp;
-    [SerializeField]LayerMask ignoreLayer;
+   //[SerializeField]LayerMask ignoreLayer;
     public bool castRay;
-    public GameObject threeWay;
-    public GameObject tempChargerHolder;
+    //public GameObject tempChargerHolder;
     [SerializeField] Transform rayShootPoint;
     public bool reflect;
     // Start is called before the first frame update
@@ -25,7 +24,7 @@ public class PrismReflection : MonoBehaviour //attached to every prism->point(ch
         //modified
         //transform.root.GetChild(3).gameObject.GetComponent<RotateObjects>().Charger(charger);
 
-        if (Physics.Raycast(rayShootPoint.position, directionTocastRay, out RaycastHit hit, 1000/*, ~ignoreLayer*/) && castRay)
+        if (Physics.Raycast(rayShootPoint.position, directionTocastRay, out RaycastHit hit, 1000/*, ignoreLayer*/) && castRay)
         {
             //reflect ray
             if (hit.collider.CompareTag("reflect"))
@@ -39,7 +38,6 @@ public class PrismReflection : MonoBehaviour //attached to every prism->point(ch
             }
             else if (hit.collider.CompareTag("prismbody"))
             {
-               
                 charger.GetComponent<ShootRay>().UpdateListOfpoints(hit.transform.position);
             }
 
@@ -49,10 +47,10 @@ public class PrismReflection : MonoBehaviour //attached to every prism->point(ch
             }
             else if (hit.collider.CompareTag("threeway"))
             {
-                threeWay = hit.transform.root.transform.GetChild(0).gameObject;
+                //threeWay = hit.transform.root.transform.GetChild(0).gameObject;
                 charger.GetComponent<ShootRay>().UpdateListOfpoints(hit.transform.position);
                
-                threeWay.SetActive(true);
+                //threeWay.SetActive(true);
             }
         }
     }
